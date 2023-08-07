@@ -15,7 +15,7 @@ android {
         applicationId "com.isaaclabs.bebaja"
         minSdk 26
         targetSdk 33
-        versionCode 8
+        versionCode 9
         versionName "1.3.0"
 
         packagingOptions {
