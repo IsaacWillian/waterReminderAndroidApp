@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="256dp"
+    android:height="256dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256">
+  <group>
+    <clip-path
+        android:pathData="M0,0h256v256h-256z"/>
+    <path
+        android:pathData="M130.98,36.44C130.19,36.17 129.14,36 127.92,36.38C126.79,36.74 125.77,37.5 124.79,38.54C122.85,40.58 120.46,44.35 117.19,51C110.6,64.4 100.02,90.4 82.21,140.28C73.09,165.8 76.24,185.61 86.16,199.16C96.01,212.63 112.22,219.45 128.34,219.73C144.45,219.99 160.83,213.71 171.02,200.51C181.26,187.24 184.89,167.44 176.41,141.43C159.81,90.55 149.66,64.85 143.18,51.69C139.95,45.13 137.56,41.52 135.62,39.45C134.63,38.39 133.73,37.7 132.87,37.22C132.16,36.83 131.5,36.62 131.14,36.49L131.14,36.49C131.08,36.47 131.02,36.46 130.98,36.44Z"
+        android:fillColor="#004468"
+        android:fillType="evenOdd"/>
+    <path
+        android:pathData="M83.81,139.37C123.42,41.12 130.11,37.64 133.49,38.97C136.86,40.3 144.1,41.06 173.16,144.05C202.23,247.05 44.2,237.62 83.81,139.37Z"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:strokeColor="#0077B6"/>
+    <path
+        android:pathData="M85.39,144.11C114.52,42.26 120.81,38.1 124.31,39.07C127.8,40.03 135.08,40.03 174.75,139.43C214.42,238.82 56.27,245.96 85.39,144.11Z"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:strokeColor="#90E0EF"/>
+    <path
+        android:pathData="M86.37,146.49C110.12,43.26 116.19,38.78 119.73,39.56C123.27,40.34 130.54,39.96 175.36,137.14C220.18,234.32 62.62,249.73 86.37,146.49Z"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:strokeColor="#CAF0F8"/>
+    <path
+        android:pathData="M84.48,141.71C118.78,41.85 125.25,38.04 128.68,39.18C132.11,40.32 139.35,40.7 173.65,141.71C207.95,242.72 50.18,241.58 84.48,141.71Z"
+        android:strokeWidth="5"
+        android:fillColor="#00000000"
+        android:strokeColor="#00B4D8"/>
+  </group>
+</vector>
