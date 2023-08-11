@@ -2,6 +2,7 @@
     <string name="app_name">DrinkNow</string>
     <string name="channel_name">reminderChannel</string>
     <string name="channel_description">Canal de notificações do DrinkNow</string>
+    <string name="notification_title">"Chegou a hora de tomar água "</string>
     <string name="history_menu">Histórico</string>
     <string name="today_menu">Hoje</string>
     <string name="reminders_menu">Lembretes</string>

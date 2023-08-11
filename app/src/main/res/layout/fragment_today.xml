@@ -17,7 +17,8 @@
             android:id="@+id/greeting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
             android:textColor="?attr/colorOnBackground"
             android:textSize="36sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,20 +95,18 @@
         <!--        </androidx.cardview.widget.CardView>-->
 
 
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerDrinks"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:paddingHorizontal="20dp"
-            android:background="@color/transparent"
-            android:visibility="visible"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+        <TextView
+            android:id="@+id/motivationPhrase"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintTop_toBottomOf="@id/greeting"
             app:layout_constraintStart_toStartOf="parent"
-            tools:listitem="@layout/drink_item" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/progressBar"/>
+
 
 
         <app.futured.donut.DonutProgressView
@@ -124,6 +123,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerDrinks"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:paddingHorizontal="20dp"
+            android:background="@color/transparent"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:listitem="@layout/drink_item" />
+
 
 
         <TextView

@@ -24,6 +24,7 @@ import com.waterreminder.databinding.FragmentTodayBinding
 import com.waterreminder.models.Drink
 import com.waterreminder.ui.ReminderViewModel
 import com.waterreminder.ui.adapter.DrinkListAdapter
+import com.waterreminder.utils.changeTextWithFadeOutFadeIn
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -43,7 +44,7 @@ class TodayFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTodayBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -80,8 +81,12 @@ class TodayFragment : Fragment() {
             }
         }
 
-        val typedValue = TypedValue();
-        requireContext().theme.resolveAttribute(androidx.appcompat.R.attr.colorPrimary, typedValue, true);
+        mReminderViewModel.motivationalPhrase.observe(viewLifecycleOwner){
+            binding.motivationPhrase.changeTextWithFadeOutFadeIn(it)
+        }
+
+        val typedValue = TypedValue()
+        requireContext().theme.resolveAttribute(androidx.appcompat.R.attr.colorPrimary, typedValue, true)
         val color = ContextCompat.getColor(requireContext(), typedValue.resourceId)
         val section1 = DonutSection(
             name = SECTION_NAME,
@@ -175,11 +180,10 @@ class TodayFragment : Fragment() {
 
     fun drinkClicked(drink:Drink) = mReminderViewModel.drink(drink)
 
-    fun drinkRemoveCLicked(mls:Int) = mReminderViewModel.removeDrink(mls.toInt())
 
     fun showDialogsAdsOrNothing(){
         when((0..10).random()){
-            1 -> {
+            0 -> {
                 try {
                     val action = TodayFragmentDirections.actionTodayFragmentToRecommendationDialog()
                     findNavController().navigate(action)
@@ -187,18 +191,11 @@ class TodayFragment : Fragment() {
 
                 }
             }
-            2,3,4,5,6 -> {
+            1,2,3,4,5,6,7,8 -> {
                 mInterstitialAd?.show(requireActivity())
             }
-            7 -> {
-                try {
-                    val action = TodayFragmentDirections.actionTodayFragmentToReviewDialog()
-                    findNavController().navigate(action)
-                } catch (_:Exception){
 
-                }
-            }
-            0,8,9 -> {
+            9 -> {
                 // nothing
             }
         }

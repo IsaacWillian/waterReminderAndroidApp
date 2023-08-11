@@ -9,6 +9,7 @@ import com.waterreminder.models.ReminderForRecycle
 import com.waterreminder.repository.ReminderRepository
 import com.waterreminder.models.History
 import com.waterreminder.models.Reminder
+import com.waterreminder.repository.MotivationalPhrasesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
@@ -24,8 +25,11 @@ class ReminderViewModel(
     private val mReminderRepository: ReminderRepository,
     private val mHistoryRepository: HistoryRepository,
     private val mDataStoreRepository: DataStoreRepository,
-    private val alarmUtils: AlarmUtils
+    private val alarmUtils: AlarmUtils,
+    private val motivationalPhrasesRepository: MotivationalPhrasesRepository
 ) : ViewModel() {
+
+    val motivationalPhrase = motivationalPhrasesRepository.getMotivationalPhraseFlow().asLiveData()
 
     private var todayHistory: History? = null
     val remindersForRecycler: MutableLiveData<MutableList<ReminderForRecycle>> by lazy {
