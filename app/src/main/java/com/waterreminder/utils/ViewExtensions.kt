@@ -35,8 +35,7 @@ fun TextView.changeTextWithFadeOutFadeIn(text:String){
     GlobalScope.launch(Dispatchers.Main) {
         this@changeTextWithFadeOutFadeIn.fadeOut()
         delay(300)
-        this@changeTextWithFadeOutFadeIn.text =
-            "Sorry, our app is constantly updated and we hope to bring you a better experience soon."
+        this@changeTextWithFadeOutFadeIn.text = text
         delay(100)
         this@changeTextWithFadeOutFadeIn.fadeIn()
     }

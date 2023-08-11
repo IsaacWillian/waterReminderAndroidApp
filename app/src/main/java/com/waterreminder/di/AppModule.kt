@@ -12,6 +12,8 @@ import com.waterreminder.db.ReminderDao
 import com.waterreminder.db.ReminderDataBase
 import com.waterreminder.repository.HistoryRepository
 import com.waterreminder.repository.HistoryRepositoryImpl
+import com.waterreminder.repository.MotivationalPhraseRepositoryImpl
+import com.waterreminder.repository.MotivationalPhrasesRepository
 import com.waterreminder.repository.ReminderRepository
 import com.waterreminder.repository.ReminderRepositoryImpl
 import com.waterreminder.ui.HistoryViewModel
@@ -48,11 +50,12 @@ val userDb = module {
     single{ provideReminderDao(get())}
     single<ReminderRepository>{ ReminderRepositoryImpl(get()) }
     single<HistoryRepository>{ HistoryRepositoryImpl(get()) }
-    single{ NotificationUtils(androidContext()) }
+    single<MotivationalPhrasesRepository>{ MotivationalPhraseRepositoryImpl(androidContext())}
+    single{ NotificationUtils(androidContext(),get()) }
     single { AlarmUtils(androidContext()) }
     single { PermissionsUtils(androidContext())}
 
-    viewModel { ReminderViewModel(get(),get(),get(),get()) }
+    viewModel { ReminderViewModel(get(),get(),get(),get(),get()) }
     viewModel{ HistoryViewModel(get(),get()) }
 
 }

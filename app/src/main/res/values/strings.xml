@@ -3,6 +3,7 @@
     <string name="app_name">DrinkNow</string>
     <string name="channel_name">reminderChannel</string>
     <string name="channel_description">notification channel of DrinkNow</string>
+    <string name="notification_title">It\'s time to drink water</string>
     <string name="history_menu">History</string>
     <string name="today_menu">Today</string>
     <string name="reminders_menu">Reminders</string>
