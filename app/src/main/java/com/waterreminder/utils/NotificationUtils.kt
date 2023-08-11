@@ -9,9 +9,10 @@ import android.graphics.BitmapFactory
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.waterreminder.R
+import com.waterreminder.repository.MotivationalPhrasesRepository
 import com.waterreminder.ui.MainActivity
 
-class NotificationUtils(val context: Context){
+class NotificationUtils(val context: Context, val motivationalPhrasesRepository: MotivationalPhrasesRepository){
 
     val CHANNEL_ID = "DrinkNow"
 
@@ -27,15 +28,15 @@ class NotificationUtils(val context: Context){
         }
         val pendingIntent: PendingIntent =
             PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
-
+        val motivationPhrase = motivationalPhrasesRepository.getMotivationalPhrase()
         val largeIcon = BitmapFactory.decodeResource(context.resources,R.drawable.ic_notification_icon)
         val builder = NotificationCompat.Builder(context,CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification_icon)
             .setLargeIcon(largeIcon)
             .setColor(context.getColor(R.color.background))
-            .setContentTitle("DrinkNow")
+            .setContentTitle(context.getString(R.string.notification_title))
             .setAutoCancel(true)
-            .setContentText("Hora de tomar um copo de água")
+            .setContentText(motivationPhrase)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setContentIntent(pendingIntent)
 

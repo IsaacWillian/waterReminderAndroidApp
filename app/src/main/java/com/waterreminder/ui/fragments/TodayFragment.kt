@@ -24,6 +24,7 @@ import com.waterreminder.databinding.FragmentTodayBinding
 import com.waterreminder.models.Drink
 import com.waterreminder.ui.ReminderViewModel
 import com.waterreminder.ui.adapter.DrinkListAdapter
+import com.waterreminder.utils.changeTextWithFadeOutFadeIn
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -78,6 +79,10 @@ class TodayFragment : Fragment() {
             if(it){
                 findNavController().navigate(R.id.action_todayFragment_to_firstPageOnboarding)
             }
+        }
+
+        mReminderViewModel.motivationalPhrase.observe(viewLifecycleOwner){
+            binding.motivationPhrase.changeTextWithFadeOutFadeIn(it)
         }
 
         val typedValue = TypedValue()
