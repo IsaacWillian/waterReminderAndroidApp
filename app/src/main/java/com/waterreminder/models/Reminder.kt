@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import kotlinx.datetime.LocalDateTime
 
 @Entity(tableName = "reminders")
-data class Reminder(@PrimaryKey(autoGenerate = true) val id:Long, val hour:Int, val minutes:Int) {
+data class Reminder(@PrimaryKey(autoGenerate = true) val id:Long = 0, val hour:Int, val minutes:Int) {
 
     fun hourToString():String{
         return if(hour > 9) return hour.toString() else "0$hour"

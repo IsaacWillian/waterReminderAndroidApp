@@ -13,10 +13,8 @@
         <action
             android:id="@+id/action_reminderList_to_newReminderFragment"
             app:destination="@id/newReminderFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/to_permissionFragment"
             app:destination="@id/permissionsFragment" />
@@ -40,8 +38,8 @@
         <action
             android:id="@+id/action_todayFragment_to_firstPageOnboarding"
             app:destination="@id/firstPageOnboarding"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"/>
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/to_welcomeFragment"
             app:destination="@id/welcomeFragment"
@@ -71,6 +69,11 @@
             android:name="isOnboarding"
             app:argType="boolean"
             android:defaultValue="false"/>
+        <action
+            android:id="@+id/action_welcomeFragment_to_scheduleReminderFragment"
+            app:destination="@id/scheduleReminderFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/firstPageOnboarding"
@@ -81,8 +84,8 @@
         <action
             android:id="@+id/toPermissionFragment"
             app:destination="@id/permissionsFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/permissionsFragment"
@@ -96,8 +99,8 @@
         <action
             android:id="@+id/to_welcomeFragment"
             app:destination="@id/welcomeFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
 
     </fragment>
     <dialog
@@ -116,4 +119,15 @@
         android:name="com.waterreminder.ui.fragments.ReviewDialog"
         tools:layout="@layout/dialog_review"
         android:label="ReviewDialog" />
+    <fragment
+        android:id="@+id/scheduleReminderFragment"
+        android:name="com.waterreminder.ui.fragments.ScheduleReminderFragment"
+        android:label="fragment_schedule_reminder"
+        tools:layout="@layout/fragment_schedule_reminder" >
+        <action
+            android:id="@+id/action_scheduleReminderFragment_to_todayFragment"
+            app:destination="@id/todayFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
 </navigation>

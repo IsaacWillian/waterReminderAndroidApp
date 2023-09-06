@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DrinkNow</string>
+    <string name="app_name">My Drink Water Reminder</string>
     <string name="channel_name">reminderChannel</string>
     <string name="channel_description">notification channel of DrinkNow</string>
     <string name="notification_title">It\'s time to drink water</string>
@@ -67,4 +67,10 @@
     <string name="review_our_app_nand_help_us">Review our app\nand help us!</string>
     <string name="review_general_text">We are very happy that this app is helping you! Review our app and share your opnion!</string>
     <string name="review_sorry_text">Sorry, our app is constantly updated and we hope to bring you a better experience soon.</string>
+    <string name="title_schedule_reminders">Let\'s go schedule reminders</string>
+    <string name="next">Next</string>
+    <string name="schedule_start_timer">Select a start time</string>
+    <string name="schedule_finish_time">Select a finish time</string>
+    <string name="schedule_interval_time">Select a interval between reminders</string>
+    <string name="schedule_button">Schedule my reminders</string>
 </resources>

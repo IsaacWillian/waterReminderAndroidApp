@@ -66,13 +66,14 @@
                 android:id="@+id/exact_alarm_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="?attr/colorOnBackground"
-                android:text="@string/exact_alarm_permission_description"
-                android:textSize="14sp"
                 android:alpha="0.7"
-                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                android:paddingHorizontal="32dp"
+                android:text="@string/exact_alarm_permission_description"
+                android:textColor="?attr/colorOnBackground"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/exact_alarm_switch"
                 app:layout_constraintStart_toStartOf="@+id/exact_alarm_text"
-                app:layout_constraintTop_toBottomOf="@+id/exact_alarm_text" />
+                app:layout_constraintTop_toBottomOf="@+id/exact_alarm_switch" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/exact_alarm_switch"
@@ -103,12 +104,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:textColor="?attr/colorOnBackground"
                 android:text="@string/optimize_battery_permission_description"
+                android:textColor="?attr/colorOnBackground"
+                android:paddingHorizontal="32dp"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/exact_alarm_text"
-                app:layout_constraintTop_toBottomOf="@+id/battery_text" />
+                app:layout_constraintTop_toBottomOf="@+id/battery_switch" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/battery_switch"
@@ -146,7 +148,7 @@
 
     <Button
         android:id="@+id/btn_back"
-        style="@style/btn_secondary"
+        style="@style/btn_primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/back"

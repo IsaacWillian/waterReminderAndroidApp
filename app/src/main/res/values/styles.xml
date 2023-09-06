@@ -84,4 +84,8 @@
         <item name="android:textColor">@color/bottomBackground</item>
     </style>
 
+    <style name="myTimePicker" parent="Theme.MaterialComponents">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+    </style>
+
 </resources>

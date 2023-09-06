@@ -17,6 +17,7 @@ import com.waterreminder.repository.MotivationalPhrasesRepository
 import com.waterreminder.repository.ReminderRepository
 import com.waterreminder.repository.ReminderRepositoryImpl
 import com.waterreminder.ui.HistoryViewModel
+import com.waterreminder.ui.MainViewModel
 import com.waterreminder.ui.ReminderViewModel
 import com.waterreminder.utils.AlarmUtils
 import com.waterreminder.utils.NotificationUtils
@@ -55,7 +56,8 @@ val userDb = module {
     single { AlarmUtils(androidContext()) }
     single { PermissionsUtils(androidContext())}
 
-    viewModel { ReminderViewModel(get(),get(),get(),get(),get()) }
+    viewModel{ ReminderViewModel(get(),get(),get(),get(),get()) }
     viewModel{ HistoryViewModel(get(),get()) }
+    viewModel{ MainViewModel(get())}
 
 }
