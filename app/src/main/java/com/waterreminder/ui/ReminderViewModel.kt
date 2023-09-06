@@ -213,6 +213,7 @@ class ReminderViewModel(
             mReminderRepository.saveReminder(Reminder(hour = reminderHour, minutes = reminderMinutes))
             sumOfMinutesStart += intervalMinutes
         }
+        alarmUtils.scheduleNewExactAlarm()
 
     }
 

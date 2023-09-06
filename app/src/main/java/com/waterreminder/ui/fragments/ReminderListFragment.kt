@@ -64,8 +64,6 @@ class ReminderList : Fragment() {
 
         binding.btnNewReminder.setOnClickListener {
             handlePermissionRequest()
-
-
         }
 
         binding.btnHelp.setOnClickListener {
