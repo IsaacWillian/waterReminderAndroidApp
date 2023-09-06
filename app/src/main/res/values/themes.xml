@@ -5,7 +5,7 @@
         <item name="colorPrimary">@color/Accent</item>
         <item name="colorPrimaryVariant">@color/SecondaryDay</item>
         <item name="colorSurface">#2B2B2B</item>
-        <item name="colorOnBackground">@color/bottomBackground</item>
+        <item name="colorOnBackground">#2B2B2B</item>
         <item name="colorOnSurface">#CBFFFFFF</item>
         <item name="colorSecondary">@color/PrimaryNight</item>
         <item name="colorSecondaryVariant">@color/PrimaryNightVariant</item>

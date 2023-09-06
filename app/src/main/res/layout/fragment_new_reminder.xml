@@ -35,6 +35,7 @@
             android:layout_height="wrap_content"
             android:headerTimeTextAppearance="@style/MyTimePickerWidgetStyleDisplay"
             app:layout_constraintEnd_toEndOf="parent"
+            android:timePickerMode="clock"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
 

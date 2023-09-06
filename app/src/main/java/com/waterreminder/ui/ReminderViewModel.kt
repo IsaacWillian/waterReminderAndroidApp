@@ -200,6 +200,22 @@ class ReminderViewModel(
         }
     }
 
+    fun createRemindersWithStartAndFinish(startTime:String,finishTime:String, intervalMinutes:Int) = viewModelScope.launch(Dispatchers.IO) {
+        val startHour = startTime.split(":")[0].toInt()
+        val startMinutes = startTime.split(":")[1].toInt()
+        val finishHour = finishTime.split(":")[0].toInt()
+        val finishMinutes = finishTime.split(":")[1].toInt()
+        var sumOfMinutesStart = startHour*60 + startMinutes
+        val sumOfMinutesFinish = finishHour*60 + finishMinutes
+        while(sumOfMinutesStart<=sumOfMinutesFinish){
+            val reminderHour = sumOfMinutesStart/60
+            val reminderMinutes = sumOfMinutesStart.mod(60)
+            mReminderRepository.saveReminder(Reminder(hour = reminderHour, minutes = reminderMinutes))
+            sumOfMinutesStart += intervalMinutes
+        }
+
+    }
+
 
 //    fun getHistory(day:Int,month:Int,year:Int):History{
 //        viewModelScope.launch {

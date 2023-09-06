@@ -13,12 +13,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.futured.donut.DonutProgressView
 import app.futured.donut.DonutSection
-import com.google.android.gms.ads.AdError
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.FullScreenContentCallback
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.interstitial.InterstitialAd
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.waterreminder.R
 import com.waterreminder.databinding.FragmentTodayBinding
 import com.waterreminder.models.Drink
@@ -36,8 +30,7 @@ class TodayFragment : Fragment() {
     private var _binding:FragmentTodayBinding? = null
     private val binding get() = _binding!!
 
-    private val TAG = "TodayFragment"
-    private var mInterstitialAd: InterstitialAd? = null
+
 
     val SECTION_NAME = "WATER"
 
@@ -49,28 +42,6 @@ class TodayFragment : Fragment() {
         return binding.root
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val adRequest = AdRequest.Builder().build()
-
-        InterstitialAd.load(requireContext(), "ca-app-pub-3521984508775017/6842847850", adRequest,
-            object : InterstitialAdLoadCallback() {
-                override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                    // The mInterstitialAd reference will be null until
-                    // an ad is loaded.
-                    mInterstitialAd = interstitialAd
-                    setupFullScreenCallback()
-                    Log.i(TAG, "onAdLoaded")
-                }
-
-                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                    // Handle the error
-                    Log.d(TAG, loadAdError.toString())
-                    mInterstitialAd = null
-                }
-            })
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -106,7 +77,7 @@ class TodayFragment : Fragment() {
         mReminderViewModel.waterOfDay.observe(viewLifecycleOwner){
             binding.progressBar.cap = it.second.toFloat()
             binding.progressBar.changeProgressAnimation(it.first)
-            binding.waterOfDay.text = it.first.toString()
+            binding.waterOfDay.changeTextWithFadeOutFadeIn(it.first.toString())
             binding.goalOfDay.text = it.second.toString()
             lifecycleScope.launch {
                 delay(500L)
@@ -116,13 +87,6 @@ class TodayFragment : Fragment() {
             }
         }
 
-        mReminderViewModel.userName?.observe(viewLifecycleOwner){
-            if(it.isNotBlank()){
-                binding.greeting.text = requireContext().getString(R.string.greeting, it)
-            } else {
-                binding.greeting.text = requireContext().getString(R.string.greeting_without_name)
-            }
-        }
 
         binding.removeDrink.setOnClickListener {
             val action = TodayFragmentDirections.actionTodayFragmentToRemoveDrinkDialog()
@@ -135,48 +99,10 @@ class TodayFragment : Fragment() {
             findNavController().navigate(action)
         }
 
-        binding.greeting.setOnClickListener {
-            val action = TodayFragmentDirections.toWelcomeFragment(false)
-            findNavController().navigate(action)
-        }
 
 
 
     }
-
-    fun setupFullScreenCallback(){
-        mInterstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
-            override fun onAdClicked() {
-                // Called when a click is recorded for an ad.
-                Log.d(TAG, "Ad was clicked.")
-            }
-
-            override fun onAdDismissedFullScreenContent() {
-                // Called when ad is dismissed.
-                // Set the ad reference to null so you don't show the ad a second time.
-                Log.d(TAG, "Ad dismissed fullscreen content.")
-                mInterstitialAd = null
-            }
-
-            override fun onAdFailedToShowFullScreenContent(adError: AdError) {
-                // Called when ad fails to show.
-                Log.e(TAG, "Ad failed to show fullscreen content.")
-                mInterstitialAd = null
-            }
-
-            override fun onAdImpression() {
-                // Called when an impression is recorded for an ad.
-                Log.d(TAG, "Ad recorded an impression.")
-            }
-
-            override fun onAdShowedFullScreenContent() {
-                // Called when ad is shown.
-                Log.d(TAG, "Ad showed fullscreen content.")
-            }
-        }
-    }
-
-
 
     fun drinkClicked(drink:Drink) = mReminderViewModel.drink(drink)
 
@@ -190,13 +116,6 @@ class TodayFragment : Fragment() {
                 } catch (_:Exception){
 
                 }
-            }
-            1,2,3,4,5,6,7,8 -> {
-                mInterstitialAd?.show(requireActivity())
-            }
-
-            9 -> {
-                // nothing
             }
         }
     }

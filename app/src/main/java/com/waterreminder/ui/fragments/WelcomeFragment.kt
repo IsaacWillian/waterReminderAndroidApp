@@ -38,16 +38,13 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mReminderViewModel.saveFirstAccess(false)
-        mReminderViewModel.userName?.observe(viewLifecycleOwner) {
-            binding.editName.setText(it)
-        }
 
         mReminderViewModel.goalOfDay.observe(viewLifecycleOwner) {
             binding.dailyGoal.progress = it / 500
         }
 
         if (safeArgs.isOnboarding) {
-            binding.btnBegin.text = getString(R.string.begin_welcome)
+            binding.btnBegin.text = getString(R.string.next)
         } else {
             binding.btnBegin.text = getString(R.string.update_welcome)
         }
@@ -71,12 +68,15 @@ class WelcomeFragment : Fragment() {
 
         binding.btnBegin.setOnClickListener {
             lifecycleScope.launch {
-                val username = binding.editName.text.toString()
-                mReminderViewModel.saveUserName(username)
+                mReminderViewModel.saveUserName("")
                 val goalOfDay = binding.dailyGoal.progress
                 mReminderViewModel.saveGoalOfDay(goalOfDay * 500)
-                delay(100)
-                findNavController().navigate(R.id.action_welcomeFragment_to_todayFragment)
+                if (safeArgs.isOnboarding) {
+                    findNavController().navigate(R.id.action_welcomeFragment_to_scheduleReminderFragment)
+                }else {
+                    findNavController().navigate(R.id.action_welcomeFragment_to_todayFragment)
+                }
+
             }
 
         }
