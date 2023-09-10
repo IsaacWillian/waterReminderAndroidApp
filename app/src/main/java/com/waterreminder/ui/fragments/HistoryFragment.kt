@@ -16,6 +16,7 @@ import com.waterreminder.ui.adapter.GraphAdapter
 import com.waterreminder.databinding.FragmentHistoryBinding
 import com.waterreminder.models.History
 import com.waterreminder.ui.HistoryViewModel
+import com.waterreminder.utils.changeTextWithFadeOutFadeIn
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HistoryFragment : Fragment() {
@@ -80,8 +81,8 @@ class HistoryFragment : Fragment() {
         }
 
         mHistoryViewModel.currentMonthAndYear.observe(viewLifecycleOwner){
-            binding.currentMonth.text = getStringByMonth(it.first)
-            binding.currentYear.text = it.second.toString()
+            binding.currentMonth.changeTextWithFadeOutFadeIn(getStringByMonth(it.first))
+            binding.currentYear.changeTextWithFadeOutFadeIn(it.second.toString())
         }
 
         binding.btnPreviousMonth.setOnClickListener {

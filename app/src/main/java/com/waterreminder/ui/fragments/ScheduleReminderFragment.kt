@@ -16,6 +16,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import com.waterreminder.R
+import com.waterreminder.analytics.Analytics
 import com.waterreminder.databinding.FragmentScheduleReminderBinding
 import com.waterreminder.ui.ReminderViewModel
 import com.waterreminder.utils.DateUtils
@@ -99,8 +100,12 @@ class ScheduleReminderFragment : Fragment() {
     }
 
     private fun makeReminders(){
-        val intervalValue = binding.intervalPicker.displayedValues[binding.intervalPicker.value-1].toInt()
-        viewModel.createRemindersWithStartAndFinish(binding.startTimePicker.text.toString(),binding.finishTimePicker.text.toString(),intervalValue)
+        val startTime = binding.startTimePicker.text.toString()
+        val finishTime = binding.finishTimePicker.text.toString()
+        val intervalValue = binding.intervalPicker.displayedValues[binding.intervalPicker.value-1]
+        val params = mapOf("startTime" to startTime,"finishTime" to finishTime,"intervalValue" to intervalValue)
+        Analytics.sendEvent("schedule_reminders",params)
+        viewModel.createRemindersWithStartAndFinish(startTime,finishTime,intervalValue.toInt())
         findNavController().navigate(R.id.action_scheduleReminderFragment_to_todayFragment)
     }
 

@@ -14,6 +14,9 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
+import com.waterreminder.BuildConfig
 import com.waterreminder.R
 import com.waterreminder.databinding.ActivityMainBinding
 import kotlinx.coroutines.flow.first
@@ -38,6 +41,19 @@ class MainActivity : AppCompatActivity() {
 
         val adRequest = AdRequest.Builder().build()
 
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+
+            // Get new FCM registration token
+            val token = task.result
+
+            // Log and toast
+            Log.d(TAG, token)
+        })
+
         InterstitialAd.load(this, "ca-app-pub-3521984508775017/6842847850", adRequest,
             object : InterstitialAdLoadCallback() {
                 override fun onAdLoaded(interstitialAd: InterstitialAd) {
@@ -45,12 +61,14 @@ class MainActivity : AppCompatActivity() {
                     // an ad is loaded.
                     mInterstitialAd = interstitialAd
                     setupFullScreenCallback()
-                    lifecycleScope.launch {
-                        viewModel.isFirstAccess().first {
-                            if (!it) {
-                                interstitialAd.show(this@MainActivity)
+                    if(!BuildConfig.DEBUG) {
+                        lifecycleScope.launch {
+                            viewModel.isFirstAccess().first {
+                                if (!it) {
+                                    interstitialAd.show(this@MainActivity)
+                                }
+                                true
                             }
-                            true
                         }
                     }
                     Log.i(TAG, "onAdLoaded")

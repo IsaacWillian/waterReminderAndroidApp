@@ -1,5 +1,6 @@
 package com.waterreminder.utils
 
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -9,6 +10,7 @@ import android.graphics.BitmapFactory
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.waterreminder.R
+import com.waterreminder.analytics.Analytics
 import com.waterreminder.repository.MotivationalPhrasesRepository
 import com.waterreminder.ui.MainActivity
 
@@ -20,7 +22,8 @@ class NotificationUtils(val context: Context, val motivationalPhrasesRepository:
     createNotificationChannel()
     }
 
-    fun showNotification(){
+    @SuppressLint("MissingPermission")
+    fun showNotification(title:String? = null, message:String? = null){
 
 
         val intent = Intent(context, MainActivity::class.java).apply {
@@ -34,14 +37,15 @@ class NotificationUtils(val context: Context, val motivationalPhrasesRepository:
             .setSmallIcon(R.drawable.ic_notification_icon)
             .setLargeIcon(largeIcon)
             .setColor(context.getColor(R.color.background))
-            .setContentTitle(context.getString(R.string.notification_title))
+            .setContentTitle(title ?: context.getString(R.string.notification_title))
             .setAutoCancel(true)
-            .setContentText(motivationPhrase)
+            .setContentText(message ?: motivationPhrase)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setContentIntent(pendingIntent)
 
         with(NotificationManagerCompat.from(context)) {
             if(this.areNotificationsEnabled()){
+                Analytics.sendEvent("show_notification")
                 notify(5, builder.build())
             }
         }
