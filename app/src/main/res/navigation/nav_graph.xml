@@ -63,17 +63,12 @@
         <action
             android:id="@+id/action_welcomeFragment_to_todayFragment"
             app:destination="@id/todayFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <argument
             android:name="isOnboarding"
             app:argType="boolean"
             android:defaultValue="false"/>
-        <action
-            android:id="@+id/action_welcomeFragment_to_scheduleReminderFragment"
-            app:destination="@id/scheduleReminderFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/firstPageOnboarding"
@@ -82,8 +77,8 @@
         tools:layout="@layout/fragment_first_page_onboarding" >
 
         <action
-            android:id="@+id/toPermissionFragment"
-            app:destination="@id/permissionsFragment"
+            android:id="@+id/action_firstPageOnboarding_to_scheduleReminderFragment"
+            app:destination="@id/scheduleReminderFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
     </fragment>
@@ -96,11 +91,6 @@
             android:name="isOnboarding"
             app:argType="boolean"
             android:defaultValue="false"/>
-        <action
-            android:id="@+id/to_welcomeFragment"
-            app:destination="@id/welcomeFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
 
     </fragment>
     <dialog
@@ -125,8 +115,8 @@
         android:label="fragment_schedule_reminder"
         tools:layout="@layout/fragment_schedule_reminder" >
         <action
-            android:id="@+id/action_scheduleReminderFragment_to_todayFragment"
-            app:destination="@id/todayFragment"
+            android:id="@+id/action_scheduleReminderFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left" />
     </fragment>

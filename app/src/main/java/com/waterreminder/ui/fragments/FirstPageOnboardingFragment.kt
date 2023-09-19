@@ -28,7 +28,7 @@ class FirstPageOnboarding : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnNextPage.setOnClickListener {
-            val action = FirstPageOnboardingDirections.toPermissionFragment(true)
+            val action = FirstPageOnboardingDirections.actionFirstPageOnboardingToScheduleReminderFragment()
             findNavController().navigate(action)
         }
 

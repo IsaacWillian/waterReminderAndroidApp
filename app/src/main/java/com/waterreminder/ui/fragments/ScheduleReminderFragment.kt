@@ -43,7 +43,7 @@ class ScheduleReminderFragment : Fragment() {
             if (it) {
                makeReminders()
             } else {
-                findNavController().navigate(R.id.action_scheduleReminderFragment_to_todayFragment)
+                findNavController().navigate(R.id.action_scheduleReminderFragment_to_welcomeFragment)
             }
         }
 
@@ -106,7 +106,7 @@ class ScheduleReminderFragment : Fragment() {
         val params = mapOf("startTime" to startTime,"finishTime" to finishTime,"intervalValue" to intervalValue)
         Analytics.sendEvent("schedule_reminders",params)
         viewModel.createRemindersWithStartAndFinish(startTime,finishTime,intervalValue.toInt())
-        findNavController().navigate(R.id.action_scheduleReminderFragment_to_todayFragment)
+        findNavController().navigate(R.id.action_scheduleReminderFragment_to_welcomeFragment)
     }
 
 

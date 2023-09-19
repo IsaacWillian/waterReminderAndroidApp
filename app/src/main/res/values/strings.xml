@@ -69,6 +69,7 @@
     <string name="review_sorry_text">Sorry, our app is constantly updated and we hope to bring you a better experience soon.</string>
     <string name="title_schedule_reminders">Let\'s go schedule reminders</string>
     <string name="next">Next</string>
+    <string name="continue_text">Continue</string>
     <string name="schedule_start_timer">Select a start time</string>
     <string name="schedule_finish_time">Select a finish time</string>
     <string name="schedule_interval_time">Select a interval between reminders</string>

@@ -70,6 +70,7 @@
     <string name="review_sorry_text">Desculpa, nosso app está sendo constantemente atualizado e esperamos te trazer uma melhor experiência logo!</string>
     <string name="title_schedule_reminders">Vamos agendar os lembretes</string>
     <string name="next">Próximo</string>
+    <string name="continue_text">Continuar</string>
     <string name="schedule_start_timer">Selecione o horário inicial</string>
     <string name="schedule_finish_time">Selecione o horário final</string>
     <string name="schedule_interval_time">Selecione um intervalo entre os lembretes</string>

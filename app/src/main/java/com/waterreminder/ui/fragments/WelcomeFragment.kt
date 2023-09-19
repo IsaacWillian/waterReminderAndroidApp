@@ -72,7 +72,7 @@ class WelcomeFragment : Fragment() {
                 val goalOfDay = binding.dailyGoal.progress
                 mReminderViewModel.saveGoalOfDay(goalOfDay * 500)
                 if (safeArgs.isOnboarding) {
-                    findNavController().navigate(R.id.action_welcomeFragment_to_scheduleReminderFragment)
+                    findNavController().navigate(R.id.action_welcomeFragment_to_todayFragment)
                 }else {
                     findNavController().navigate(R.id.action_welcomeFragment_to_todayFragment)
                 }
