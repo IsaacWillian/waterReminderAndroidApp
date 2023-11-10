@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha="1"
-    android:background="@drawable/background"
+    android:background="@color/transparent"
     tools:context=".ui.fragments.NewReminderFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,7 +55,7 @@
             style="@style/btn_secondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnSurface"
+            android:textColor="?attr/colorPrimary"
             android:text="@string/back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

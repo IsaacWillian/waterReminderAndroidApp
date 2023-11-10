@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/transparent"
     tools:context=".WelcomeFragment">
 
 
@@ -12,15 +12,14 @@
         android:id="@+id/goal_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="96dp"
         android:gravity="center"
         android:text="@string/daily_goal_question"
         android:textColor="?attr/colorOnBackground"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/privacy_policy"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <SeekBar
         android:id="@+id/daily_goal"
@@ -30,6 +29,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="48dp"
         android:max="12"
+        android:progressBackgroundTint="@color/black"
         android:progressTint="@color/Accent"
         android:thumb="@drawable/ic_water1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,7 @@
         android:padding="24dp"
         android:text="@string/call_privacy_policy"
         android:textAlignment="center"
-        android:textColor="?attr/colorOnSurface"
+        android:textColor="?attr/colorOnBackground"
         app:layout_constraintBottom_toTopOf="@+id/btn_begin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

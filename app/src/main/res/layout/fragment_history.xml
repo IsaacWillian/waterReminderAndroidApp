@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/transparent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:text=""
-                    android:textColor="?attr/colorOnBackground"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="30sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                     android:src="@drawable/arrow_back"
                     app:layout_constraintBottom_toBottomOf="@+id/current_month"
                     app:layout_constraintStart_toEndOf="@+id/guideline2"
-                    app:tint="?attr/colorOnPrimary" />
+                    app:tint="?attr/colorOnSurface" />
 
                 <ImageButton
                     android:id="@+id/btn_next_month"
@@ -86,7 +86,7 @@
                     android:src="@drawable/arrow_next"
                     app:layout_constraintBottom_toBottomOf="@+id/current_month"
                     app:layout_constraintEnd_toStartOf="@+id/guideline3"
-                    app:tint="?attr/colorOnPrimary" />
+                    app:tint="?attr/colorOnSurface" />
 
                 <TextView
                     android:id="@+id/current_year"
@@ -128,7 +128,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
-                        android:background="?attr/colorSurface"
+                        android:background="?attr/colorOnSurface"
                         android:padding="12dp">
 
                         <TextView
@@ -138,7 +138,7 @@
                             android:background="@color/transparent"
                             android:gravity="start"
                             android:text="@string/goal_of_day"
-                            android:textColor="?attr/colorOnSurface"
+                            android:textColor="?attr/colorPrimary"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
 
@@ -148,7 +148,7 @@
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
                             android:text="@string/day_title"
-                            android:textColor="?attr/colorOnSurface"
+                            android:textColor="?attr/colorPrimary"
                             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
                             app:layout_constraintStart_toStartOf="parent" />
 
@@ -167,7 +167,7 @@
                                 android:id="@+id/chart_bars"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:background="?attr/colorSurface"
+                                android:background="?attr/colorOnSurface"
                                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -212,7 +212,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:background="?attr/colorSurface">
+                        android:background="?attr/colorOnSurface">
 
                         <androidx.constraintlayout.widget.Guideline
                             android:id="@+id/guideline4"
@@ -226,7 +226,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_margin="12dp"
-                            android:background="?attr/colorSurface"
+                            android:background="?attr/colorOnSurface"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -251,7 +251,7 @@
                             android:alpha="0.7"
                             android:background="@color/transparent"
                             android:text="@string/select_a_day"
-                            android:textColor="?attr/colorOnSurface"
+                            android:textColor="?attr/colorPrimary"
                             android:textSize="16sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -265,7 +265,7 @@
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
                             android:text="2000 ml"
-                            android:textColor="?attr/colorOnSurface"
+                            android:textColor="?attr/colorPrimary"
                             android:textSize="34sp"
                             android:visibility="invisible"
                             app:layout_constraintBottom_toBottomOf="@+id/water_progress_bar"
@@ -279,7 +279,7 @@
                             android:layout_height="wrap_content"
                             android:background="@color/transparent"
                             android:text="1000 ml"
-                            android:textColor="?attr/colorOnSurface"
+                            android:textColor="?attr/colorPrimary"
                             android:textSize="16sp"
                             android:visibility="invisible"
                             app:layout_constraintEnd_toStartOf="@+id/guideline4"

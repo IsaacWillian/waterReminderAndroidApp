@@ -79,8 +79,8 @@
         <action
             android:id="@+id/action_firstPageOnboarding_to_scheduleReminderFragment"
             app:destination="@id/scheduleReminderFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top" />
     </fragment>
     <fragment
         android:id="@+id/permissionsFragment"
@@ -117,7 +117,7 @@
         <action
             android:id="@+id/action_scheduleReminderFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top" />
     </fragment>
 </navigation>

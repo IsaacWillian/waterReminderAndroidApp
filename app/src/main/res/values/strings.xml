@@ -45,9 +45,9 @@
     <string name="select_a_day">Select a day to see your history</string>
     <string name="reminder_succefull">Reminder added Successfully</string>
     <string name="you_can_in_drinknow">At DrinkNow you can:</string>
-    <string name="features_1">Save you daily water intake</string>
-    <string name="features_2">View your comsumption history</string>
-    <string name="features_3">Set reminders that remind you to hydrate</string>
+    <string name="features_1">Save you daily\nwater intake</string>
+    <string name="features_2">View your\ncomsumption history</string>
+    <string name="features_3">Set reminders\nthat remind you\nto hydrate</string>
     <string name="exact_alarm_permission_title">Exact alarm permission</string>
     <string name="exact_alarm_permission_description">Allowing alarms allows water reminders to work properly. If it is not accepted, the application will not be able to send notifications</string>
     <string name="optimize_battery_permission_title">Battery allowance not optimized</string>

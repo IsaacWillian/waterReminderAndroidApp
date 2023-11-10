@@ -4,14 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/transparent"
     tools:context=".ui.fragments.TodayFragment">
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:alpha="1"
+        android:background="@color/transparent"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="DrinkNow"
+        android:textColor="@color/new_blue"
+        android:textSize="42sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:background="@drawable/background"
+        android:background="@color/transparent"
         android:layout_height="match_parent"
         app:layoutDescription="@xml/fragment_today_xml_constraintlayout2_scene">
+
 
 
 
@@ -105,7 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:layout_marginHorizontal="24dp"
-            app:donut_bgLineColor="?attr/colorSurface"
+            app:donut_bgLineColor="?attr/colorOnPrimary"
             app:donut_cap="100"
             app:donut_strokeCap="round"
             app:donut_strokeWidth="24dp"
@@ -173,20 +193,24 @@
             android:id="@+id/floatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="?attr/colorPrimary"
+            android:backgroundTint="@color/new_blue"
             android:src="@drawable/baseline_add_24"
             app:borderWidth="0dp"
+            app:tint="?attr/colorOnSurface"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" >
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/removeDrink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
-            android:backgroundTint="?attr/colorPrimary"
+            android:backgroundTint="@color/new_blue"
+            app:tint="?attr/colorOnSurface"
             android:scaleX="0.9"
             android:scaleY="0.9"
             android:src="@drawable/baseline_remove_24"
