@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/todayFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/reminderList"
@@ -117,6 +117,22 @@
         <action
             android:id="@+id/action_scheduleReminderFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.waterreminder.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_firstFragment_to_firstPageOnboarding"
+            app:destination="@id/firstPageOnboarding"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top" />
+        <action
+            android:id="@+id/action_firstFragment_to_todayFragment"
+            app:destination="@id/todayFragment"
             app:enterAnim="@anim/slide_in_bottom"
             app:exitAnim="@anim/slide_out_top" />
     </fragment>

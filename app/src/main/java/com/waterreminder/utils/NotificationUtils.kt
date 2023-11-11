@@ -32,8 +32,11 @@ class NotificationUtils(val context: Context, val motivationalPhrasesRepository:
         val pendingIntent: PendingIntent =
             PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
         val motivationPhrase = motivationalPhrasesRepository.getMotivationalPhrase()
-        val largeIcon = BitmapFactory.decodeResource(context.resources,R.drawable.ic_notification_icon)
+        val largeIcon = BitmapFactory.decodeResource(context.resources,R.mipmap.ic_launcher)
         val builder = NotificationCompat.Builder(context,CHANNEL_ID)
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setLargeIcon(largeIcon)
+            .setColor(context.getColor(R.color.background))
             .setContentTitle(title ?: context.getString(R.string.notification_title))
             .setAutoCancel(true)
             .setContentText(message ?: motivationPhrase)
