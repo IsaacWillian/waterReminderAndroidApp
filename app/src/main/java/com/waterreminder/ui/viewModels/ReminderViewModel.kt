@@ -1,4 +1,4 @@
-package com.waterreminder.ui
+package com.waterreminder.ui.viewModels
 
 import androidx.lifecycle.*
 import com.waterreminder.datastore.DataStoreRepository
@@ -11,7 +11,6 @@ import com.waterreminder.models.History
 import com.waterreminder.models.Reminder
 import com.waterreminder.repository.MotivationalPhrasesRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
@@ -213,6 +212,7 @@ class ReminderViewModel(
             mReminderRepository.saveReminder(Reminder(hour = reminderHour, minutes = reminderMinutes))
             sumOfMinutesStart += intervalMinutes
         }
+        alarmUtils.scheduleNewExactAlarm()
 
     }
 

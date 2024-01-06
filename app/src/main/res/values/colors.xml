@@ -29,5 +29,6 @@
     <color name="background">#97C8E3</color>
     <color name="bottomBackground">#004468</color>
     <color name="stars">#FFE58A</color>
+    <color name="new_blue">#0077B6</color>
 
 </resources>

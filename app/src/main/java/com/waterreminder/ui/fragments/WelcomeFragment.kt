@@ -13,8 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.waterreminder.R
 import com.waterreminder.databinding.FragmentWelcomeBinding
-import com.waterreminder.ui.ReminderViewModel
-import kotlinx.coroutines.delay
+import com.waterreminder.ui.viewModels.ReminderViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
@@ -72,7 +71,7 @@ class WelcomeFragment : Fragment() {
                 val goalOfDay = binding.dailyGoal.progress
                 mReminderViewModel.saveGoalOfDay(goalOfDay * 500)
                 if (safeArgs.isOnboarding) {
-                    findNavController().navigate(R.id.action_welcomeFragment_to_scheduleReminderFragment)
+                    findNavController().navigate(R.id.action_welcomeFragment_to_todayFragment)
                 }else {
                     findNavController().navigate(R.id.action_welcomeFragment_to_todayFragment)
                 }

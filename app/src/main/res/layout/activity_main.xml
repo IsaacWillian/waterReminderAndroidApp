@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background_5"
     tools:context=".ui.MainActivity">
 
 
@@ -31,8 +31,8 @@
         app:labelVisibilityMode="labeled"
         app:itemIconTint="@color/icon_color"
         app:itemTextColor="@color/icon_color"
-        android:backgroundTint="@color/bottomBackground"
-        app:itemBackground="@color/bottomBackground"
+        android:backgroundTint="@color/transparent"
+        app:itemBackground="@color/transparent"
         app:menu="@menu/bottom_navigation_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

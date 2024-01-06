@@ -36,8 +36,14 @@
                 <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED"/>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
-
         </receiver>
+        <service
+            android:name=".FCM.FCMReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

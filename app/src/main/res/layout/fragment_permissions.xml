@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@color/transparent"
     tools:context=".ui.fragments.PermissionsFragment">
 
 
@@ -51,14 +51,15 @@
 
             <TextView
                 android:id="@+id/exact_alarm_text"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
-                android:textColor="?attr/colorOnBackground"
                 android:text="@string/exact_alarm_permission_title"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,13 +68,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
-                android:paddingHorizontal="32dp"
                 android:text="@string/exact_alarm_permission_description"
                 android:textColor="?attr/colorOnBackground"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/exact_alarm_switch"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="@+id/exact_alarm_text"
-                app:layout_constraintTop_toBottomOf="@+id/exact_alarm_switch" />
+                app:layout_constraintTop_toBottomOf="@+id/exact_alarm_text" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/exact_alarm_switch"
@@ -90,12 +90,13 @@
                 android:id="@+id/battery_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:textColor="?attr/colorOnBackground"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="24dp"
                 android:text="@string/optimize_battery_permission_title"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/exact_alarm_description" />
 
@@ -106,11 +107,11 @@
                 android:alpha="0.7"
                 android:text="@string/optimize_battery_permission_description"
                 android:textColor="?attr/colorOnBackground"
-                android:paddingHorizontal="32dp"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/exact_alarm_text"
-                app:layout_constraintTop_toBottomOf="@+id/battery_switch" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/battery_text"
+                app:layout_constraintTop_toBottomOf="@+id/battery_text" />
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/battery_switch"

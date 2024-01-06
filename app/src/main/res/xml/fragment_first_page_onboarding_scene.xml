@@ -48,8 +48,8 @@
         <Constraint
             android:id="@+id/btn_next_page"
             android:elevation="12dp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             android:alpha="1"
             motion:layout_constraintTop_toTopOf="@+id/guideline5"
@@ -99,9 +99,9 @@
         <Constraint
             android:id="@+id/btn_next_page"
             android:elevation="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
             motion:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="48dp"
             android:alpha="1"
@@ -165,8 +165,8 @@
         <Constraint
             android:id="@+id/btn_next_page"
             android:elevation="12dp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             android:alpha="1"
             motion:layout_constraintTop_toTopOf="@+id/guideline5"

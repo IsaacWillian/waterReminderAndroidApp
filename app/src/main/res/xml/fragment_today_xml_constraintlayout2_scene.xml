@@ -12,13 +12,6 @@
 
     <ConstraintSet android:id="@+id/start">
         <Constraint
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:visibility="visible"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintBottom_toTopOf="parent" />
-        <Constraint
             android:layout_height="90dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -26,6 +19,17 @@
             motion:layout_constraintTop_toBottomOf="parent"
             android:id="@+id/recyclerDrinks"
             android:alpha="0" />
+        <Constraint
+            android:id="@+id/floatingActionButton"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/progressBar"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            motion:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/app_name" />
 
 
     </ConstraintSet>
@@ -46,8 +50,8 @@
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toBottomOf="@+id/progressBar"
-            android:scaleX="0.4"
-            android:scaleY="0.4"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
             motion:layout_constraintVertical_bias="0.32999998"
             android:rotation="45" />
 

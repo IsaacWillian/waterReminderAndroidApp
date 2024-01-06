@@ -1,4 +1,4 @@
-package com.waterreminder.ui
+package com.waterreminder.ui.viewModels
 
 import androidx.lifecycle.*
 import com.waterreminder.datastore.DataStoreRepository
@@ -7,10 +7,6 @@ import com.waterreminder.repository.HistoryRepository
 import com.waterreminder.utils.DateUtils
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
-import kotlinx.datetime.Clock
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
-import java.util.*
 
 class HistoryViewModel(
     private val mHistoryRepository: HistoryRepository,

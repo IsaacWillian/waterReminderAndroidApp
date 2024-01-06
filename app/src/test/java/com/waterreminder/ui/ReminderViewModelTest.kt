@@ -1,6 +1,6 @@
 package com.waterreminder.ui
 
-import org.junit.Assert.*
+import com.waterreminder.ui.viewModels.ReminderViewModel
 import org.junit.Before
 
 class ReminderViewModelTest {

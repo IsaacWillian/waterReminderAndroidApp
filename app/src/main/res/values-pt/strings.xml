@@ -46,9 +46,9 @@
     <string name="select_a_day">Escolha um dia para ver seu histórico</string>
     <string name="reminder_succefull">Lembrete adicionado com sucesso</string>
     <string name="you_can_in_drinknow">No DrinkNow você pode:</string>
-    <string name="features_1">Guardar sua ingestão diária de água</string>
-    <string name="features_2">Ver seu histórico de consumo</string>
-    <string name="features_3">Programar lembretes que te  lembrarão de se hidratar</string>
+    <string name="features_1">Guarde sua ingestão\ndiária de água</string>
+    <string name="features_2">Veja seu histórico\nde consumo</string>
+    <string name="features_3">Programe lembretes\nque te ajudarão a\nbeber mais água</string>
     <string name="exact_alarm_permission_title">Permissao de alarmes exatos</string>
     <string name="exact_alarm_permission_description">A permissão de alarmes permite que os lembretes de água funcionem corretamente. Caso não seja aceita o aplicativo não conseguirá enviar notificações</string>
     <string name="optimize_battery_permission_title">Permissao de bateria não otimizada</string>
@@ -70,6 +70,7 @@
     <string name="review_sorry_text">Desculpa, nosso app está sendo constantemente atualizado e esperamos te trazer uma melhor experiência logo!</string>
     <string name="title_schedule_reminders">Vamos agendar os lembretes</string>
     <string name="next">Próximo</string>
+    <string name="continue_text">Continuar</string>
     <string name="schedule_start_timer">Selecione o horário inicial</string>
     <string name="schedule_finish_time">Selecione o horário final</string>
     <string name="schedule_interval_time">Selecione um intervalo entre os lembretes</string>

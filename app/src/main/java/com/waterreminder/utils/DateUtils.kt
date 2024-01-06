@@ -1,9 +1,12 @@
 package com.waterreminder.utils
 
+import android.content.Context
+import com.waterreminder.R
 import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import org.koin.core.instance.InstanceContext
 import java.util.*
 
 object DateUtils {
@@ -46,6 +49,27 @@ object DateUtils {
 
     private fun isDividedBy400(number: Int): Boolean {
         return number % 400 == 0
+    }
+
+    fun getMonthNameByMonthNumber(month:Int,context: Context?):String {
+        context?.run {
+            return when (month) {
+                1 -> getString(R.string.january)
+                2 -> getString(R.string.february)
+                3 -> getString(R.string.march)
+                4 -> getString(R.string.april)
+                5 -> getString(R.string.may)
+                6 -> getString(R.string.june)
+                7 -> getString(R.string.july)
+                8 -> getString(R.string.august)
+                9 -> getString(R.string.september)
+                10 -> getString(R.string.october)
+                11 -> getString(R.string.november)
+                12 -> getString(R.string.december)
+                else -> ""
+            }
+        }
+        return ""
     }
 
 

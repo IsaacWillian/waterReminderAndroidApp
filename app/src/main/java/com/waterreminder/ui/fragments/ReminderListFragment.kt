@@ -14,12 +14,11 @@ import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.ads.AdRequest
 import com.waterreminder.R
 import com.waterreminder.ui.adapter.ReminderListAdapter
 import com.waterreminder.databinding.FragmentReminderListBinding
 import com.waterreminder.models.ReminderForRecycle
-import com.waterreminder.ui.ReminderViewModel
+import com.waterreminder.ui.viewModels.ReminderViewModel
 import com.waterreminder.utils.PermissionsUtils
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -64,8 +63,6 @@ class ReminderList : Fragment() {
 
         binding.btnNewReminder.setOnClickListener {
             handlePermissionRequest()
-
-
         }
 
         binding.btnHelp.setOnClickListener {
