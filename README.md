@@ -24,6 +24,9 @@
  - Motion layout and Animation
  - Dark Mode Theme and styles
 
+## Architecture Diagram
+<img src="images/ArquiteturaWaterReminderApp.png" width="200" alt="Architecture Diagram"/>
+
 ## Video
 ![Video](images/WaterReminderVideo.webm)
 
