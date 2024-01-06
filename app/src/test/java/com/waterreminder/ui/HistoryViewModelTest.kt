@@ -1,15 +1,13 @@
 package com.waterreminder.ui
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.waterreminder.datastore.FakeDataStoreRepository
 import com.waterreminder.models.History
 import com.waterreminder.repository.FakeHistoryRepository
 import com.waterreminder.utils.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
+import com.waterreminder.ui.viewModels.HistoryViewModel
 import getOrAwaitValue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule

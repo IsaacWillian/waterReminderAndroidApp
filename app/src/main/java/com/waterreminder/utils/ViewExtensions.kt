@@ -1,6 +1,9 @@
 package com.waterreminder.utils
 
+import android.animation.ObjectAnimator
 import android.view.View
+import android.view.animation.DecelerateInterpolator
+import android.widget.ProgressBar
 import android.widget.TextView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -40,4 +43,11 @@ fun TextView.changeTextWithFadeOutFadeIn(text:String){
         this@changeTextWithFadeOutFadeIn.fadeIn()
     }
 
+}
+
+fun ProgressBar.smoothProgress(percent: Int){
+    val animation = ObjectAnimator.ofInt(this, "progress", percent)
+    animation.duration = 800
+    animation.interpolator = DecelerateInterpolator()
+    animation.start()
 }

@@ -66,7 +66,6 @@ class AlarmUtils(val context: Context):KoinComponent {
         val intent = Intent(context, AlarmReceiver::class.java)
         val pendingToCancel = PendingIntent.getService(context,
             reminderId.toInt(),intent,PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE)
-        //TODO Não está encontrando o pending intent
         if (pendingToCancel != null && alarmManager !=null){
             alarmManager.cancel(pendingToCancel)
         }

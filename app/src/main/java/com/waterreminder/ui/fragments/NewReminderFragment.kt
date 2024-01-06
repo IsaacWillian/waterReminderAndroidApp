@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.waterreminder.R
-import com.waterreminder.ui.ReminderViewModel
+import com.waterreminder.ui.viewModels.ReminderViewModel
 import com.waterreminder.databinding.FragmentNewReminderBinding
 import com.waterreminder.models.Reminder
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

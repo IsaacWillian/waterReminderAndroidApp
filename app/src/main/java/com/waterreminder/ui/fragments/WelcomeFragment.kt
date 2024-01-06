@@ -13,8 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.waterreminder.R
 import com.waterreminder.databinding.FragmentWelcomeBinding
-import com.waterreminder.ui.ReminderViewModel
-import kotlinx.coroutines.delay
+import com.waterreminder.ui.viewModels.ReminderViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

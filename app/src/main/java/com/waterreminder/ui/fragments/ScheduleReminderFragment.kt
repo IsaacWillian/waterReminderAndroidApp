@@ -18,7 +18,7 @@ import androidx.navigation.fragment.findNavController
 import com.waterreminder.R
 import com.waterreminder.analytics.Analytics
 import com.waterreminder.databinding.FragmentScheduleReminderBinding
-import com.waterreminder.ui.ReminderViewModel
+import com.waterreminder.ui.viewModels.ReminderViewModel
 import com.waterreminder.utils.DateUtils
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 

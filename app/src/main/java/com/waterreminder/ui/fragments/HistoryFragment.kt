@@ -9,14 +9,15 @@ import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.gms.ads.AdRequest
 import com.waterreminder.R
 import com.waterreminder.ui.adapter.DaysListAdapter
 import com.waterreminder.ui.adapter.GraphAdapter
 import com.waterreminder.databinding.FragmentHistoryBinding
 import com.waterreminder.models.History
-import com.waterreminder.ui.HistoryViewModel
+import com.waterreminder.ui.viewModels.HistoryViewModel
+import com.waterreminder.utils.DateUtils.getMonthNameByMonthNumber
 import com.waterreminder.utils.changeTextWithFadeOutFadeIn
+import com.waterreminder.utils.smoothProgress
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HistoryFragment : Fragment() {
@@ -81,7 +82,7 @@ class HistoryFragment : Fragment() {
         }
 
         mHistoryViewModel.currentMonthAndYear.observe(viewLifecycleOwner){
-            binding.currentMonth.changeTextWithFadeOutFadeIn(getStringByMonth(it.first))
+            binding.currentMonth.changeTextWithFadeOutFadeIn(getMonthNameByMonthNumber(it.first,context))
             binding.currentYear.changeTextWithFadeOutFadeIn(it.second.toString())
         }
 
@@ -103,30 +104,7 @@ class HistoryFragment : Fragment() {
 
     }
 
-    fun ProgressBar.smoothProgress(percent: Int){
-        val animation = ObjectAnimator.ofInt(this, "progress", percent)
-        animation.duration = 800
-        animation.interpolator = DecelerateInterpolator()
-        animation.start()
-    }
 
-    private fun getStringByMonth(month:Int):String{
-        return when(month){
-            1 -> getString(R.string.january)
-            2 -> getString(R.string.february)
-            3 -> getString(R.string.march)
-            4 -> getString(R.string.april)
-            5 -> getString(R.string.may)
-            6 -> getString(R.string.june)
-            7 -> getString(R.string.july)
-            8 -> getString(R.string.august)
-            9 -> getString(R.string.september)
-            10 -> getString(R.string.october)
-            11 -> getString(R.string.november)
-            12 -> getString(R.string.december)
-            else -> ""
-        }
-    }
 
 
 

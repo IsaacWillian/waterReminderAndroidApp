@@ -1,7 +1,6 @@
 package com.waterreminder.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +16,7 @@ import com.waterreminder.R
 import com.waterreminder.analytics.Analytics
 import com.waterreminder.databinding.FragmentTodayBinding
 import com.waterreminder.models.Drink
-import com.waterreminder.ui.ReminderViewModel
+import com.waterreminder.ui.viewModels.ReminderViewModel
 import com.waterreminder.ui.adapter.DrinkListAdapter
 import com.waterreminder.utils.changeTextWithFadeOutFadeIn
 import kotlinx.coroutines.delay
@@ -25,6 +24,7 @@ import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
+//TODO Separar ReminderViewModel para TodayViewModel
 class TodayFragment : Fragment() {
 
     private val mReminderViewModel by sharedViewModel<ReminderViewModel>()

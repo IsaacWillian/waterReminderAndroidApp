@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.waterreminder.databinding.DialogRemoveDrinkBinding
-import com.waterreminder.ui.ReminderViewModel
+import com.waterreminder.ui.viewModels.ReminderViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class RemoveDrinkDialog: DialogFragment() {

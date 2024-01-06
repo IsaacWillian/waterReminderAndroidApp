@@ -122,7 +122,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.waterreminder.SplashFragment"
+        android:name="com.waterreminder.ui.fragments.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
