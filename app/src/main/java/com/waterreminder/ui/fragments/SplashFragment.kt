@@ -44,6 +44,7 @@ class SplashFragment : Fragment() {
                 RedirectAction.RedirectToTodayFragment -> goToTodayFragment()
             }
         }
+        viewModel.checkFirstAccessAndRedirect()
     }
 
 
