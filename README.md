@@ -31,11 +31,11 @@
 <img src="images/ArquiteturaWaterReminderApp.png" width="400" alt="Architecture Diagram"/>
 
 ## Video
-![Video](images/videoPresentation.mp4)
+![Video](images/videoPresentation.webp)
 
 ## Screens
 <img src="images/today.jpeg" width="200" alt="Today Screen"/>
-<img src="images/reminders.png" width="200" alt="Reminders Screen "/>
+<img src="images/reminders.jpeg" width="200" alt="Reminders Screen "/>
 <img src="images/history.jpeg" width="200" alt="History Screen"/>
 
 ## Next steps
