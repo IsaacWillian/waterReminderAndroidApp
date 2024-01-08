@@ -6,41 +6,39 @@
  - Reminder: You can schedule reminders for all day to remember you to drink water
  
 ## Objective
- - This app was build to study Android Development and, in future, publish in Play Store for get real feedbacks and improvement the features and User Experience.
+ - This app was build to study modern Android Development and other things like ads, UX and user retention
 
 ## Concepts used
- - Alarms
- - Notifications
- - Coroutines for Asynchronous tasks
- - Room 
- - Reactive Programing with Flow
- - Dependency Injection using Koin
- - Solid principles
- - Navigation and pass arguments
- - CustomView
- - DataStore
- - RecyclerView
- - MVVM Architecture
- - Motion layout and Animation
- - Dark Mode Theme and styles
+  - MVVM Architecture
+  - Solid principles
+  - Coroutines for Asynchronous tasks
+  - Reactive Programing with Flow
+  - Dependency Injection using Koin
+  - Database ( Room )
+  - Firebase Analytics
+  - Firebase Messaging
+  - Ads ( admob )
+  - Alarms
+  - Notifications
+  - Navigation and pass arguments
+  - CustomView
+  - DataStore
+  - RecyclerView
+  - Motion layout and Animation
+  - Dark Mode Theme and styles
+
+## Architecture Diagram
+<img src="images/ArquiteturaWaterReminderApp.png" width="400" alt="Architecture Diagram"/>
 
 ## Video
-![Video](images/WaterReminderVideo.webm)
+![Video](images/videoPresentation.webp)
 
 ## Screens
-### Dark Mode
-<img src="images/Today.png" width="200" alt="Today Screen in Dark Mode"/>
-<img src="images/Reminders.png" width="200" alt="Reminders Screen in Dark Mode"/>
-<img src="images/New_reminder.png" width="200" alt="New reminder Screen in Dark Mode"/>
-<img src="images/History.png" width="200" alt="History Screen in Dark Mode"/>
-
-### Light Mode
-<img src="images/Today_Day.png" width="200" alt="Today Screen in Light Mode"/>
-<img src="images/Reminders_Day.png" width="200" alt="Reminders Screen in Light Mode"/>
-<img src="images/New_reminder_Day.png" width="200" alt="New reminder Screen in Light Mode"/>
-<img src="images/History_day.png" width="200" alt="History Screen in Light Mode"/>
+<img src="images/today.jpeg" width="200" alt="Today Screen"/>
+<img src="images/reminders.jpeg" width="200" alt="Reminders Screen "/>
+<img src="images/history.jpeg" width="200" alt="History Screen"/>
 
 ## Next steps
- - Tests
- - Translate to English
+ - Finish CI/CD Setup
+ - Modularization
 
