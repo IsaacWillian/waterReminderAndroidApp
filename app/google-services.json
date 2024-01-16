@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "245713639643",
+    "project_id": "drinknow-c3c99",
+    "storage_bucket": "drinknow-c3c99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245713639643:android:ce51aa1617001861c254fe",
+        "android_client_info": {
+          "package_name": "com.isaaclabs.bebaja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245713639643-m2q5fvdn9d1p1odv5u54d12f66p71bkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIqQbpXOwzf7BGTBq3LKy_aM_Eu6INMTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245713639643-m2q5fvdn9d1p1odv5u54d12f66p71bkv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-3521984508775017~5337280790"
+    }
+  ],
+  "configuration_version": "1"
+}
